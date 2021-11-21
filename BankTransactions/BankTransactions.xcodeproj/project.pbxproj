@@ -20,6 +20,8 @@
 		24A165092747A41500FEAADD /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A165082747A41500FEAADD /* TransactionListViewModel.swift */; };
 		24A1650C2747B5A100FEAADD /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1650B2747B5A100FEAADD /* TransactionListView.swift */; };
 		24A1650E27480F6A00FEAADD /* TransactionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A1650D27480F6A00FEAADD /* TransactionRowView.swift */; };
+		24A45DDA2748F78100E64042 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A45DD92748F78100E64042 /* StringExtension.swift */; };
+		24A45DDC274A743600E64042 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A45DDB274A743600E64042 /* ArrayExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		24A165082747A41500FEAADD /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 		24A1650B2747B5A100FEAADD /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
 		24A1650D27480F6A00FEAADD /* TransactionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowView.swift; sourceTree = "<group>"; };
+		24A45DD92748F78100E64042 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		24A45DDB274A743600E64042 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +104,9 @@
 		24A164C3274789B700FEAADD /* BankTransactions */ = {
 			isa = PBXGroup;
 			children = (
-				24A1650A2747B51200FEAADD /* Views */,
+				24A45DD82748F73400E64042 /* Extension */,
 				24A16500274790B300FEAADD /* Models */,
+				24A1650A2747B51200FEAADD /* Views */,
 				24A1650727479C6E00FEAADD /* View Models */,
 				24A16503274796CA00FEAADD /* Services */,
 				24A164C4274789B700FEAADD /* BankTransactionsApp.swift */,
@@ -162,6 +167,15 @@
 				24A1650D27480F6A00FEAADD /* TransactionRowView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		24A45DD82748F73400E64042 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				24A45DD92748F78100E64042 /* StringExtension.swift */,
+				24A45DDB274A743600E64042 /* ArrayExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,7 +339,9 @@
 				24A164EE274789BB00FEAADD /* ContentView.swift in Sources */,
 				24A165092747A41500FEAADD /* TransactionListViewModel.swift in Sources */,
 				24A164EC274789BB00FEAADD /* BankTransactionsApp.swift in Sources */,
+				24A45DDC274A743600E64042 /* ArrayExtension.swift in Sources */,
 				24A16506274799FE00FEAADD /* Webservice.swift in Sources */,
+				24A45DDA2748F78100E64042 /* StringExtension.swift in Sources */,
 				24A165022747940A00FEAADD /* Transaction.swift in Sources */,
 				24A1650E27480F6A00FEAADD /* TransactionRowView.swift in Sources */,
 				24A1650C2747B5A100FEAADD /* TransactionListView.swift in Sources */,

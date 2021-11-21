@@ -18,8 +18,61 @@ struct TransactionRowView: View {
     // MARK: - BODY
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        VStack(spacing: 10) {
+           
+                HStack(){
+                    Image(systemName: transaction.amount > 0 ? "plus.circle" : "minus.circle")
+                        .foregroundColor(transaction.amount > 0 ? Color.green : Color.red)
+                        .font(.system(size: 24, weight: .bold, design: .rounded))
+                   
+                    Text(transaction.description.emptyDescription())
+                        .font(.caption)
+                
+              
+                    Spacer()
+            
+                    Text("\(transaction.amount, specifier: "%.2f") €")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+            } //: HSTACK
+            
+           
+            
+            HStack() {
+                
+                
+                let date = transaction.date.dateFromDate()
+                let time = transaction.date.timeFromDate()
+                
+                Spacer()
+                Text("Date: \(date) ")
+                    .font(.caption)
+                Text("Time: \(time) ")
+                    .font(.caption)
+                
+                Spacer()
+        
+                Text("Fee: \(transaction.fee, specifier: "%.2f") €")
+                    .font(.caption)
+                
+               
+            } //: HSTACK
+            
+            
+            
+            HStack() {
+                
+              
+                
+                Spacer()
+        
+                Text("Total: \(transaction.amount + transaction.fee, specifier: "%.2f") €")
+                    .font(.system(size: 16, weight: .bold, design: .rounded))
+                
+               
+            } //: HSTACK
+            
+        } //: VSTACK
+    } //: BODY
 }
 
 // MARK: - PREVIEW

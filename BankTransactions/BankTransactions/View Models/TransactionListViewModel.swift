@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+
 class TransactionListViewModel: ObservableObject {
     
     @Published var transactions = [Transaction]()
@@ -18,9 +19,13 @@ class TransactionListViewModel: ObservableObject {
     }
     
     private func fetchTransactions() {
+        
         self.cancellable = Webservice().getAllTransactions().sink(receiveCompletion: { _ in  print("Completion received")} , receiveValue: { transactionViewModels in
             print("Receiving Publication")
-            self.transactions = transactionViewModels
+            var auxTransactions = transactionViewModels.sorted(by: {$0.date > $1.date})
+            auxTransactions = auxTransactions.filter{ $0.date.validateDate()}
+            let uniqueTransactions = auxTransactions.unique{$0.id}
+            self.transactions = uniqueTransactions
         })
             
         }

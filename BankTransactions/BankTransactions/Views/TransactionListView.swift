@@ -19,7 +19,8 @@ struct TransactionListView: View {
     
     var body: some View {
         List(self.transactionListVM.transactions){ transactionVM in
-            Text("\(transactionVM.description)")
+            
+            TransactionRowView(transaction: transactionVM)
             
         }
     }

@@ -7,8 +7,9 @@
 
 import SwiftUI
 
+// Demo Transaction created for SwuiftUI previews
 
-let demoTransaction = Transaction(id: 4734, date: "2018-07-28T14:14:17.000Z", amount: -193.38, fee: -3.18, description: "Test Transaction)")
+let demoTransaction = Transaction(id: 4734, date: "2018-07-28T14:14:17.000Z", amount: 193.38, fee: -3.18, description: "Test Transaction")
 
 struct Transaction: Codable, Identifiable {
     
@@ -18,6 +19,8 @@ struct Transaction: Codable, Identifiable {
     let fee: Double
     let description: String
     
+    
+    // enum required for initialization override
     enum CodingKeys: String, CodingKey {
         
         case id = "id"
@@ -27,6 +30,9 @@ struct Transaction: Codable, Identifiable {
         case description = "description"
     }
     
+    
+    // Initialization override to avoid errors from missing keys
+    
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decodeIfPresent(Int.self, forKey: .id) ?? 0
@@ -35,6 +41,8 @@ struct Transaction: Codable, Identifiable {
         fee = try values.decodeIfPresent(Double.self, forKey: .fee) ??  0.0
         description = try values.decodeIfPresent(String.self, forKey: .description) ?? ""
     }
+    
+    // Initialization override to create manually transactions
     
     init(id: Int, date: String, amount: Double, fee: Double, description: String){
         self.id = id
