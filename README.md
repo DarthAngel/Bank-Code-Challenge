@@ -7,8 +7,8 @@ We used the MVVM pattern since it's the default pattern for SwiftUI. MVVM has a 
 
 TODO:
 
-For persistence we could have used Core Data.
-For code checking we could hace used XCTEST.
+For persistance we could have used Core Data.
+We could also have added unit tests for all the extension functions and webservice class.
 
 
 
