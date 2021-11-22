@@ -18,9 +18,11 @@ struct TransactionRowView: View {
     // MARK: - BODY
     
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 10) { // This vertical stack groups all 3 horizontal stacks
            
-                HStack(){
+                HStack(){ // We group in an horizontal stack an icon for the opration value sign, decription, and value
+                    
+                    // We show a + green icon for positive value transactions and a - red icon for negative value transactions
                     Image(systemName: transaction.amount > 0 ? "plus.circle" : "minus.circle")
                         .foregroundColor(transaction.amount > 0 ? Color.green : Color.red)
                         .font(.system(size: 24, weight: .bold, design: .rounded))
@@ -37,7 +39,7 @@ struct TransactionRowView: View {
             
            
             
-            HStack() {
+            HStack() { // In this horizontal stack we group, date, time, and fee
                 
                 
                 let date = transaction.date.dateFromDate()
@@ -59,7 +61,7 @@ struct TransactionRowView: View {
             
             
             
-            HStack() {
+            HStack() { // We use this horizontal stack combined with an Spacer to show the total amount to the right.
                 
               
                 

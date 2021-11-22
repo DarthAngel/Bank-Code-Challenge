@@ -7,6 +7,8 @@
 
 import Foundation
 
+// This array extension removes duplicates from an array  given an expecified key
+
 extension Array {
     func unique<T:Hashable>(map: ((Element) -> (T)))  -> [Element] {
         var set = Set<T>() //the unique list kept in a Set for fast retrieval

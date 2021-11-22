@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    // MARK: - PROPERTIES
+    
+    
+    
+    // MARK: - BODY
     var body: some View {
-       TransactionListView()
+        
+        VStack { // Vertical Stack with title and transaction list
+            Text("Bank Transactions")
+                .font(.title)
+            TransactionListView()
+        }
+
+       
     }
 }
 
+// MARK: - PREVIEW
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

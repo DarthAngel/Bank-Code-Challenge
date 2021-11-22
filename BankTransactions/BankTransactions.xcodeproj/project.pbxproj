@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24A164DD274789BB00FEAADD /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A164DC274789BB00FEAADD /* Tests_iOS.swift */; };
-		24A164DF274789BB00FEAADD /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A164DE274789BB00FEAADD /* Tests_iOSLaunchTests.swift */; };
 		24A164EC274789BB00FEAADD /* BankTransactionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A164C4274789B700FEAADD /* BankTransactionsApp.swift */; };
 		24A164ED274789BB00FEAADD /* BankTransactionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A164C4274789B700FEAADD /* BankTransactionsApp.swift */; };
 		24A164EE274789BB00FEAADD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A164C5274789B700FEAADD /* ContentView.swift */; };
@@ -48,8 +46,6 @@
 		24A164CB274789BB00FEAADD /* BankTransactions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankTransactions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A164D1274789BB00FEAADD /* BankTransactions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankTransactions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A164D8274789BB00FEAADD /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		24A164DC274789BB00FEAADD /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
-		24A164DE274789BB00FEAADD /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
 		24A164E4274789BB00FEAADD /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A165012747940A00FEAADD /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		24A16505274799FE00FEAADD /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
@@ -58,6 +54,7 @@
 		24A1650D27480F6A00FEAADD /* TransactionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowView.swift; sourceTree = "<group>"; };
 		24A45DD92748F78100E64042 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		24A45DDB274A743600E64042 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		24A45DDD274A822700E64042 /* BankTransactions--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "BankTransactions--iOS--Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +92,8 @@
 		24A164BE274789B700FEAADD = {
 			isa = PBXGroup;
 			children = (
+				24A45DDD274A822700E64042 /* BankTransactions--iOS--Info.plist */,
 				24A164C3274789B700FEAADD /* BankTransactions */,
-				24A164DB274789BB00FEAADD /* Tests iOS */,
 				24A164CC274789BB00FEAADD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,15 +121,6 @@
 				24A164E4274789BB00FEAADD /* Tests macOS.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		24A164DB274789BB00FEAADD /* Tests iOS */ = {
-			isa = PBXGroup;
-			children = (
-				24A164DC274789BB00FEAADD /* Tests_iOS.swift */,
-				24A164DE274789BB00FEAADD /* Tests_iOSLaunchTests.swift */,
-			);
-			path = "Tests iOS";
 			sourceTree = "<group>";
 		};
 		24A16500274790B300FEAADD /* Models */ = {
@@ -361,8 +349,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24A164DF274789BB00FEAADD /* Tests_iOSLaunchTests.swift in Sources */,
-				24A164DD274789BB00FEAADD /* Tests_iOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,9 +496,10 @@
 				DEVELOPMENT_TEAM = CQLDM5Q7V2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BankTransactions--iOS--Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bank Transactions";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -527,7 +514,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -541,9 +528,10 @@
 				DEVELOPMENT_TEAM = CQLDM5Q7V2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BankTransactions--iOS--Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bank Transactions";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -558,7 +546,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
