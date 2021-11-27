@@ -23,7 +23,7 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -35,6 +35,26 @@
                BlueprintIdentifier = "24A164D7274789BB00FEAADD"
                BuildableName = "Tests iOS.xctest"
                BlueprintName = "Tests iOS"
+               ReferencedContainer = "container:BankTransactions.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "24363A652750F17800051C08"
+               BuildableName = "BankTransactionsTests.xctest"
+               BlueprintName = "BankTransactionsTests"
+               ReferencedContainer = "container:BankTransactions.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "24363A722750F26900051C08"
+               BuildableName = "BankTransactionsUITests.xctest"
+               BlueprintName = "BankTransactionsUITests"
                ReferencedContainer = "container:BankTransactions.xcodeproj">
             </BuildableReference>
          </TestableReference>

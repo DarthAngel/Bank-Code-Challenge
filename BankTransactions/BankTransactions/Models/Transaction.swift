@@ -13,7 +13,7 @@ let demoTransaction = Transaction(id: 4734, date: "2018-07-28T14:14:17.000Z", am
 
 // MARK: - Transaction struct defined with Codable porperty for JSON decoding, and Identifiable property for listing.
 
-struct Transaction: Codable, Identifiable {
+struct Transaction: Codable, Identifiable, Equatable {
     
     let id: Int 
     let date: String

@@ -42,7 +42,7 @@ struct TransactionRowView: View {
             HStack() { // In this horizontal stack we group, date, time, and fee
                 
                 
-                let date = transaction.date.dateFromDate()
+                let date = transaction.date.dateFromDate() 
                 let time = transaction.date.timeFromDate()
                 
                 Spacer()

@@ -23,31 +23,58 @@ extension String {
     
     func validateDate() -> Bool {
 
-        let datePattern = #"^\d{4}\-\d{2}\-\d{2}T\d{2}\:\d{2}\:\d{2}\.\d{3}Z"#
+                let fromDateFormat = "yyyy-MM-dd'T'HH:mm:ss.sssZ"
         
-        let result = self.range(
-            of: datePattern,
-            options: .regularExpression
-        )
 
+               let fromDateFormatter = DateFormatter()
+               fromDateFormatter.dateFormat = fromDateFormat
 
-        return (result != nil)
-      
+               if fromDateFormatter.date(from: self) != nil {
+
+                   return true
+               }
+               
+               return false
+        
+        
 
     }
     
     // Extracts a date string from the date/time string received from the server
     
     func dateFromDate() -> String {
-        return String(self.prefix(10))
-        
-    }
-    
+        return convert(dateString: self, fromDateFormat: "yyyy-MM-dd'T'HH:mm:ss.sssZ", toDateFormat: "yyyy-MM-dd")!
+       }
+
+
     // Extracts a time string from the date/time string received from the server
     
     func timeFromDate() -> String {
-        return String(self.suffix(13).prefix(8))
+        return convert(dateString: self, fromDateFormat: "yyyy-MM-dd'T'HH:mm:ss.sssZ", toDateFormat: "HH:mm:ss")!
     }
+    
+    
+    func convert(dateString: String, fromDateFormat: String, toDateFormat: String) -> String? {
+
+           let fromDateFormatter = DateFormatter()
+           fromDateFormatter.dateFormat = fromDateFormat
+
+           if let fromDateObject = fromDateFormatter.date(from: dateString) {
+
+               let toDateFormatter = DateFormatter()
+               toDateFormatter.dateFormat = toDateFormat
+
+               let newDateString = toDateFormatter.string(from: fromDateObject)
+               return newDateString
+           }
+           
+           return "Invalid"
+       }
+    
+    
+  
+    
+    
     
     
     
