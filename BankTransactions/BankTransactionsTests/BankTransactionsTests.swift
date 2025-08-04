@@ -47,7 +47,6 @@ class BankTransactionsTests: XCTestCase {
     }
 
     func testEmptyDesc(){
-        
         let emptyString = ""
         let notEmptyString = "abc"
         
@@ -56,14 +55,86 @@ class BankTransactionsTests: XCTestCase {
         
         let outputString2 = notEmptyString.emptyDescription()
         XCTAssertEqual(outputString2, notEmptyString)
-        
     }
     
-    func testUniqueArray(){
+    func testTransactionInitialization() {
+        // Test with all fields
+        let transaction = Transaction(id: 1, date: "2023-01-01T12:00:00.000Z", 
+                                    amount: 100.0, fee: -1.99, 
+                                    description: "Test Transaction")
         
+        XCTAssertEqual(transaction.id, 1)
+        XCTAssertEqual(transaction.date, "2023-01-01T12:00:00.000Z")
+        XCTAssertEqual(transaction.amount, 100.0)
+        XCTAssertEqual(transaction.fee, -1.99)
+        XCTAssertEqual(transaction.description, "Test Transaction")
+        
+        // Test with empty description
+        let emptyDescTransaction = Transaction(id: 2, date: "2023-01-01T12:00:00.000Z", 
+                                             amount: 50.0, fee: 0, 
+                                             description: "")
+        XCTAssertEqual(emptyDescTransaction.description, "")
+    }
+    
+    func testTransactionDecoding() throws {
+        let json = """
+        {
+            "id": 1234,
+            "date": "2023-06-15T14:30:00.000Z",
+            "amount": 199.99,
+            "fee": -2.50,
+            "description": "Online Purchase"
+        }
+        """.data(using: .utf8)!
+        
+        let decoder = JSONDecoder()
+        let transaction = try decoder.decode(Transaction.self, from: json)
+        
+        XCTAssertEqual(transaction.id, 1234)
+        XCTAssertEqual(transaction.date, "2023-06-15T14:30:00.000Z")
+        XCTAssertEqual(transaction.amount, 199.99)
+        XCTAssertEqual(transaction.fee, -2.50)
+        XCTAssertEqual(transaction.description, "Online Purchase")
+    }
+    
+    func testTransactionWithMissingFields() throws {
+        let json = """
+        {
+            "id": 1234,
+            "date": "2023-06-15T14:30:00.000Z"
+        }
+        """.data(using: .utf8)!
+        
+        let decoder = JSONDecoder()
+        let transaction = try decoder.decode(Transaction.self, from: json)
+        
+        // Should use default values for missing fields
+        XCTAssertEqual(transaction.id, 1234)
+        XCTAssertEqual(transaction.date, "2023-06-15T14:30:00.000Z")
+        XCTAssertEqual(transaction.amount, 0.0)
+        XCTAssertEqual(transaction.fee, 0.0)
+        XCTAssertEqual(transaction.description, "")
+    }
+    
+    func testUniqueArray() {
         let uniqueArray = inputArray.unique{$0.id}
         XCTAssertEqual(uniqueArray, outputArray)
+    }
+    
+    func testTransactionEquality() {
+        let transaction1 = Transaction(id: 1, date: "2023-01-01T12:00:00.000Z", 
+                                     amount: 100.0, fee: -1.99, 
+                                     description: "Test")
+        let transaction2 = Transaction(id: 1, date: "2023-01-01T12:00:00.000Z", 
+                                     amount: 100.0, fee: -1.99, 
+                                     description: "Test")
+        let transaction3 = Transaction(id: 2, date: "2023-01-01T12:00:00.000Z", 
+                                     amount: 100.0, fee: -1.99, 
+                                     description: "Test")
         
+        // Test equality based on id (Equatable conformance)
+        XCTAssertEqual(transaction1, transaction2)
+        XCTAssertNotEqual(transaction1, transaction3)
     }
     
 

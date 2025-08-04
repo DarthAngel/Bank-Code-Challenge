@@ -19,6 +19,7 @@ struct ContentView: View {
             Text("Bank Transactions")
                 .font(.title)
             TransactionListView()
+                
         }
 
        

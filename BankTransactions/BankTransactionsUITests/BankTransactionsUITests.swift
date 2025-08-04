@@ -22,13 +22,40 @@ class BankTransactionsUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testTransactionListAppears() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+        
+        
+        // Verify the main screen title is displayed
+        XCTAssertTrue(app.staticTexts["Bank Transactions"].exists)
+        
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+
+    
+    func testTransactionFiltering() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        // Assuming there's a search bar for filtering
+        let searchField = app.searchFields["Search transactions"]
+        if searchField.exists {
+            searchField.tap()
+            searchField.typeText("Test")
+            
+            // Verify the list updates with filtered results
+            let transactionList = app.tables["transactionList"]
+            XCTAssertTrue(transactionList.cells.count > 0)
+            
+            // Clear search
+            let clearButton = app.buttons["Clear text"]
+            if clearButton.exists {
+                clearButton.tap()
+            }
+        }
     }
 
     func testLaunchPerformance() throws {
