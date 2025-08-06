@@ -5,10 +5,6 @@ For devices not supporting iOS 13, SwiftUI has to be replaced by UIKit.
 No Cocoapods / Caarthage / Swift Package was needed for this exercise.
 We used the MVVM pattern since it's the default pattern for SwiftUI. MVVM has a better decoupling for unit testing that MVC. 
 
-TODO:
-
-For persistance we could have used Core Data.
-
 
 
 
